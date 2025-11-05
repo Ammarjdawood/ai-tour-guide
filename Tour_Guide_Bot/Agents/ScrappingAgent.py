@@ -6,11 +6,11 @@ from scheme import ScrapedContent
 from model import llm
 from savedir import output_dir
 from scrapegraph_py import Client
-
-
-load_dotenv()
 from bs4 import BeautifulSoup
 import requests
+
+load_dotenv()
+
 
 def simple_scraper_tool(page_url: str):
     """
@@ -37,7 +37,7 @@ def simple_scraper_tool(page_url: str):
         return {
             "page_url": page_url,
             "status": "ok",
-            "clean_text": clean_text[:5000]  # اختصار للنص الطويل
+            "clean_text": clean_text[:5000]
         }
 
     except Exception as e:
@@ -47,34 +47,7 @@ def simple_scraper_tool(page_url: str):
             "error": str(e)
         }
 
-# scrape_client = Client(api_key=os.getenv("SCRAPEGRAPH_API_KEY"))
 
-
-# @tool
-# def scraper_tool(page_url: str):
-#     """
-#     Scrape clean historical or cultural text content from a webpage.
-
-#     Example:
-#     scraper_tool(
-#         page_url="https://example.com/ancient-egypt-history"
-#     )
-#     """
-
-
-#     scraper = scrape_client.smartscraper(
-#         website_url=page_url,
-#         user_prompt=(
-#             "Extract only the main clean text from the web page. "
-#             "Ignore ads, navigation menus, and unrelated content."
-#         )
-#     )
-
-#     scraped_data = scraper.run()
-#     return {
-#         "page_url": page_url,
-#         "scraped_content": scraped_data
-#     }
 
 @tool
 def web_scraper(page_url: str):
