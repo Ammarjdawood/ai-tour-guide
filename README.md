@@ -3,7 +3,6 @@
 An intelligent Streamlit application that enhances museum and historical site experiences using computer vision, multi-agent systems, and generative AI. 
 The app serves as a smart tour guide capable of identifying artifacts, answering questions, restoring damaged statues, and interpreting hieroglyphics.
 
----
 
 ## Features
 
@@ -12,7 +11,6 @@ The app serves as a smart tour guide capable of identifying artifacts, answering
 - Added custom layers and trained both new and pretrained layers.
 - The model predicts the artifact from an uploaded image, then fetches detailed information from our database.
 
----
 
 ### 2. Multi-Agent Tourist Assistance
 A 5-agent pipeline that helps tourists get well-researched answers:
@@ -23,20 +21,17 @@ A 5-agent pipeline that helps tourists get well-researched answers:
 4. **Cleaner & Summarizer** – Cleans and summarizes all scraped data.  
 5. **Story Builder** – Combines summaries into an engaging, readable explanation.
 
----
 
 ### 3. Artifact Restoration (Stable Diffusion Inpainting)
 - Tourists can upload a photo of a broken statue.
 - They highlight the missing parts.
 - Stable Diffusion inpainting reconstructs and displays a restored version of the artifact.
 
----
 
 ### 4. Hieroglyphic Interpretation (Gemini API)
 - Users upload an image containing hieroglyphics.
 - Gemini API explains the text clearly and in the user’s preferred language.
 
----
 
 ## Tech Stack
 - **Environment Management: Conda**
@@ -50,12 +45,9 @@ A 5-agent pipeline that helps tourists get well-researched answers:
 - **Gemini API**
 - **BeautifulSoup**
 
----
 
 ## About the Project
 This application blends historical education with AI, providing tourists with a personalized and immersive learning experience.
-
----
 
 ## Team
 - Ammar Ashraf Moawad
@@ -65,7 +57,6 @@ This application blends historical education with AI, providing tourists with a 
 - Mohammed Hamada Saad Shoaib
 - Salwa Mustafa Mohammed
 
----
 
 ##  How to Run  
 
