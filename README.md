@@ -1,79 +1,103 @@
-# 🏛️ AI-Powered Smart Tour Guide for Museums and Archaeological Sites
+# AI-Powered Interactive Tourist Guide
 
-This repository contains the code and documentation for an AI-driven mobile application designed to enhance the visitor experience at museums and archaeological sites. The "Smart Tour Guide" transforms a user's phone camera into an intelligent assistant that can instantly recognize, translate, and digitally restore artifacts.
+An intelligent Streamlit application that enhances museum and historical site experiences using computer vision, multi-agent systems, and generative AI. 
+The app serves as a smart tour guide capable of identifying artifacts, answering questions, restoring damaged statues, and interpreting hieroglyphics.
 
-## ✨ Project Idea
+---
 
-The goal of this project is to create an **AI-driven mobile application** that acts as a comprehensive tour guide. By simply capturing an image of an artifact, the user can receive rich historical context, real-time translation of ancient scripts, and a glimpse of the artifact's original, complete form through digital reconstruction.
+## Features
 
-## 🚀 Key Features and Deliverables
+### 1. Artifact Recognition (Fine-Tuned ResNet50)
+- Fine-tuned a ResNet50 model on **22 classes of ancient artifacts**.
+- Added custom layers and trained both new and pretrained layers.
+- The model predicts the artifact from an uploaded image, then fetches detailed information from our database.
 
-The project focuses on three primary AI capabilities:
+---
 
-1.  **Artifact Recognition Model (Computer Vision):**
-    * **Function:** Identifies and classifies the type of artifact from a user-captured image.
-    * **Output:** Retrieves and displays relevant historical metadata from the knowledge base.
+### 2. Multi-Agent Tourist Assistance
+A 5-agent pipeline that helps tourists get well-researched answers:
 
-2.  **Script Recognition & Translation (OCR + NLP):**
-    * **Function:** Detects and extracts ancient scripts (e.g., hieroglyphics) from images.
-    * **Output:** Translates the extracted symbols or text into a modern language (e.g., English/Arabic).
+1. **Query Generator** – Creates search queries from the user’s question.  
+2. **Search Agent** – Performs web searches using each query.  
+3. **Scraper Agent** – Extracts content from the collected links.  
+4. **Cleaner & Summarizer** – Cleans and summarizes all scraped data.  
+5. **Story Builder** – Combines summaries into an engaging, readable explanation.
 
-3.  **Digital Restoration Model (Generative AI):**
-    * **Function:** Uses image-to-image or 3D reconstruction techniques to digitally restore broken or incomplete artifacts.
-    * **Output:** Shows a visualization of the artifact's original form.
+---
 
-The final application is hosted via a **Streamlit App** to demonstrate the full end-to-end Machine Learning Pipeline.
+### 3. Artifact Restoration (Stable Diffusion Inpainting)
+- Tourists can upload a photo of a broken statue.
+- They highlight the missing parts.
+- Stable Diffusion inpainting reconstructs and displays a restored version of the artifact.
 
-## 💻 Technology Stack
+---
 
-The project utilizes a powerful combination of tools across Computer Vision, Natural Language Processing, and 3D visualization.
+### 4. Hieroglyphic Interpretation (Gemini API)
+- Users upload an image containing hieroglyphics.
+- Gemini API explains the text clearly and in the user’s preferred language.
 
-| Component | Tool/Library | Purpose |
-| :--- | :--- | :--- |
-| **Machine Learning** | **TensorFlow/Keras** | Training and deploying core CV/Generative AI models. |
-| **Computer Vision** | **OpenCV** | Image preprocessing (denoising, resizing, segmentation). |
-| **OCR** | **Tesseract OCR** | Initial detection and character recognition of scripts. |
-| **NLP/Translation** | **Hugging Face Transformers** | Advanced translation models for ancient scripts. |
-| **Digital Reconstruction** | **Unity3D** | Potential platform for displaying real-time 3D reconstructions. |
-| **Knowledge Base** | **Database / Graph DB** | Storing artifact metadata, reconstructions, and translations. |
-| **Web Interface** | **Streamlit** | Building the final interactive demo application. |
+---
 
-## 🛠️ Project Pipeline
+## Tech Stack
+- **Environment Management: Conda**
+- **Python**
+- **Streamlit**
+- **Tensorflow**
+- **mlflow**
+- **ResNet50**
+- **Crewai**
+- **Stable Diffusion Inpainting**
+- **Gemini API**
+- **BeautifulSoup**
 
-The user input follows a sequential pipeline to generate the results:
+---
 
-1.  **INPUT:** User captures an artifact image via the mobile app (simulated via Streamlit).
-2.  **PREPROCESSING (OpenCV):** Image denoising, resizing, and segmentation to prepare for models.
-3.  **SCRIPT OCR (Tesseract):** Detects and converts symbols in the image to text format.
-4.  **ARTIFACT RECOGNITION (CV Model):** Classifies the artifact type and retrieves metadata.
-5.  **TRANSLATION MODEL (Hugging Face):** Translates recognized scripts into modern text.
-6.  **ARTIFACT RECONSTRUCTION (Generative AI/Unity3D):** Generates image or 3D view of the complete artifact.
-7.  **KNOWLEDGE BASE:** Stores and retrieves all related data (metadata, translations, reconstructions).
-8.  **RESULTS (Streamlit/Web):** Display of artifact facts, translated text, and the reconstructed image/model.
+## About the Project
+This application blends historical education with AI, providing tourists with a personalized and immersive learning experience.
 
-## 👥 Project Team
+---
 
-This project is a collaborative effort by the following team members:
+## Team
+- Ammar Ashraf Moawad
+- Ammar Jamal Dawood
+- Belal Mohsen Mosbah
+- Mariam Mohamed Abdelmoneim 
+- Mohammed Hamada Saad Shoaib
+- Salwa Mustafa Mohammed
 
-| Name | Role / Contribution |
-| :--- | :--- |
-| **Ammar Jamal Dawood** | Team Leader |
-| Ammar Ashraf Moawad | Artifact Recognition Model (CV) |
-| Belal Mohsen Mosbah | Artifact Recognition Model (CV) |
-| Mariam Mohamed Abdelmoneim | Digital Artifact Restoration (Generative AI) |
-| Salwa Mustafa Mohamed | Digital Artifact Restoration (Generative AI) |
-| Mohamed Hamada Saad Shoaib | *Role to be finalized (e.g., NLP, Knowledge Base)* |
+---
 
-## 📂 Dataset Sources
+##  How to Run  
 
-The models are trained using the following data:
+1️⃣ Clone repo:
+```bash
+git clone <repo-link>
+cd project-folder
+```
+2️⃣ Create a new environment:
+```bash
+conda create -n env-name python=3.10
+```
+3️⃣ Activate the environment:
+```bash
+conda activate env-name
+```
+4️⃣ Install the required packages
+```bash
+cd Tour_Guide_Bot
+cp .env.example .env
+pip install -r requirements.txt
+```
+5️⃣ Configure environment variables:
+Edit the `.env` file with your API keys and configuration:
 
-* Artifact images (for Recognition and Restoration).
-* Artifact metadata (for the Knowledge Base).
-* Ancient script texts and their corresponding modern translations (for OCR and Translation Models).
+```env
+MODEL_NAME = your_model_name
+GOOGLE_API_KEY = your_google_api_key
+TAVILY_API_KEY = your_tavily_api_key
 
-***
-
-## ⚙️ Setup and Installation
-
-*Detailed setup instructions (dependencies, environment setup, model weights download, and running the Streamlit app) will be added here upon completion of the initial development phases.*
+```
+6️⃣ Run streamlit app
+```bash
+streamlit run app.py
+```
