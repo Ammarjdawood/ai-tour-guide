@@ -5,7 +5,6 @@ from crewai.tools import tool
 from scheme import ScrapedContent
 from model import llm
 from savedir import output_dir
-from scrapegraph_py import Client
 from bs4 import BeautifulSoup
 import requests
 

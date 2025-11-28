@@ -36,4 +36,4 @@ def run_history_crew(user_question):
      )
     return crew_results
 
-run_history_crew("How did the Nile River influence the development of ancient Egypt?")
+#run_history_crew("How did the Nile River influence the development of ancient Egypt?")
