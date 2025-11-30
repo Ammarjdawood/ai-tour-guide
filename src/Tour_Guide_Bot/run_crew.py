@@ -1,4 +1,9 @@
 from crewai import Crew, Process
+import os
+import sys
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, current_dir)
 from Agents.QuereAgent import Query_Agent, Query_Task
 from Agents.SearchAgent import Search_Agent, Search_Task
 from Agents.ScrappingAgent import Scrapping_Agent, Scrapping_Task

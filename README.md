@@ -3,6 +3,8 @@
 An intelligent Streamlit application that enhances museum and historical site experiences using computer vision, multi-agent systems, and generative AI. 
 The app serves as a smart tour guide capable of identifying artifacts, answering questions, restoring damaged statues, and interpreting hieroglyphics.
 
+## Project Description
+Here is the Description Document of the project: [Document](https://drive.google.com/file/d/113psCj3pjrRmhe8CFjGQfiJYptkd_0V2/view)
 
 ## Features
 
@@ -10,6 +12,8 @@ The app serves as a smart tour guide capable of identifying artifacts, answering
 - Fine-tuned a ResNet50 model on **22 classes of ancient artifacts**.
 - Added custom layers and trained both new and pretrained layers.
 - The model predicts the artifact from an uploaded image, then fetches detailed information from our database.
+- **Training Data**: [Link](https://universe.roboflow.com/fatma-saeed-th9nx/egypt-landmarks/dataset/5)
+- **Information Data for each Artifact and Model File**: [Data & Model](https://drive.google.com/drive/folders/1-DT8iBzUKuTwoIeFHDbPHjBeugTUZVmV?usp=sharing)
 
 
 ### 2. Multi-Agent Tourist Assistance
@@ -63,7 +67,7 @@ This application blends historical education with AI, providing tourists with a 
 1️⃣ Clone repo:
 ```bash
 git clone <repo-link>
-cd project-folder
+cd ai-tour-guide
 ```
 2️⃣ Create a new environment:
 ```bash
@@ -75,7 +79,7 @@ conda activate env-name
 ```
 4️⃣ Install the required packages
 ```bash
-cd Tour_Guide_Bot
+cd src
 cp .env.example .env
 pip install -r requirements.txt
 ```

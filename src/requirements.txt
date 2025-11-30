@@ -1,8 +1,17 @@
-streamlit==1.28.1
 crewai[google-genai]==1.2.1
-pydantic == 2.12.3
 google-genai == 1.47.0
-python-dotenv == 1.2.1
-tavily-python == 0.7.12
-pillow == 10.0.0
-google-generativeai == 0.8.5
+pydantic==2.12.3
+python-dotenv==1.2.1
+tavily-python==0.7.12
+streamlit==1.36.0
+streamlit-drawable-canvas
+Pillow
+diffusers 
+transformers
+accelerate
+torch
+numpy
+tensorflow
+pandas
+google-generativeai==0.8.5
+
