@@ -3,8 +3,10 @@
 An intelligent Streamlit application that enhances museum and historical site experiences using computer vision, multi-agent systems, and generative AI. 
 The app serves as a smart tour guide capable of identifying artifacts, answering questions, restoring damaged statues, and interpreting hieroglyphics.
 
-## Project Description
-Here is the Description Document of the project: [Document](https://drive.google.com/file/d/113psCj3pjrRmhe8CFjGQfiJYptkd_0V2/view)
+## Project Description & Demo
+- Here is the Description Document of the project: [Document](https://drive.google.com/file/d/113psCj3pjrRmhe8CFjGQfiJYptkd_0V2/view)
+
+- Project Demo Video: [Demo](https://drive.google.com/drive/folders/1YsnyWHW0yyKepRSIB96RhbuLqZ117Qv6?usp=sharing)
 
 ## Features
 
