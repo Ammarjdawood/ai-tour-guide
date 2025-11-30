@@ -94,5 +94,5 @@ TAVILY_API_KEY = your_tavily_api_key
 ```
 6️⃣ Run streamlit app
 ```bash
-streamlit run app.py
+streamlit run Home.py
 ```
